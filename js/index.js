@@ -108,9 +108,35 @@ bottomText[0].textContent = siteContent["main-content"]["services-content"];
 bottomText[1].textContent = siteContent["main-content"]["product-content"];
 bottomText[2].textContent = siteContent["main-content"]["vision-content"];
 
+
 contactTitle.textContent = siteContent.contact["contact-h4"];
-contactText[0].textContent = siteContent.contact["address"];
-contactText[1].textContent = siteContent.contact["phone"];
-contactText[2].textContent = siteContent.contact["email"];
+contactText[0].textContent = "123 Way 456 Street";
+
+contactText[1].textContent = "Somewhere, USA";
+contactText[2].textContent = siteContent.contact["phone"];
+const contactTextExtra = document.createElement("p");
+contactTextExtra.textContent = siteContent.contact["email"];
+document.querySelector(".contact").appendChild(contactTextExtra);
+
 
 footerText.textContent = siteContent.footer.copyright;
+
+
+
+
+/* 
+* [ ] Change the color of the navigation text to be green.
+* [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+*/
+
+const navArray = document.querySelectorAll("nav a");
+for (let i=0; i<navArray.length; i++) {
+  navArray[i].style.color = "green";
+}
+
+const newNav1 = document.createElement("a");
+const newNav2 = document.createElement("a");
+newNav1.textContent = "New Link 1";
+newNav2.textContent = "New Link 2";
+document.querySelector("nav").prepend(newNav1);
+document.querySelector("nav").appendChild(newNav2);
